@@ -76,11 +76,17 @@ export function initPanZoom() {
     drag = null; captured = false; svg.classList.remove("drag");
   };
   stage.addEventListener("pointerup", endDrag); stage.addEventListener("pointercancel", endDrag);
-  stage.addEventListener("wheel", e => { e.preventDefault();
+  stage.addEventListener("wheel", e => {
+    if (e.target.closest(".zoom,.card,.verdict,.timeline")) return;
+    e.preventDefault();
     zoom(e.deltaY < 0 ? 1.12 : 1 / 1.12, e.offsetX, e.offsetY); }, { passive: false });
   let pinch = null;
-  stage.addEventListener("touchstart", e => { if (e.touches.length === 2) {
-    const [a, b] = e.touches; pinch = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY); } }, { passive: true });
+  stage.addEventListener("touchstart", e => {
+    if (e.target.closest(".zoom,.card,.verdict,.timeline")) return;
+    if (e.touches.length === 2) {
+      const [a, b] = e.touches; pinch = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+    }
+  }, { passive: true });
   stage.addEventListener("touchmove", e => { if (e.touches.length === 2 && pinch) {
     const [a, b] = e.touches, d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
     zoom(d / pinch, (a.clientX + b.clientX) / 2, (a.clientY + b.clientY) / 2); pinch = d; } }, { passive: true });
