@@ -1,0 +1,12 @@
+:root{
+  --ground:#D9E8E4; --ground-deep:#C3D9D4; --paper:#fff;
+  --ink:#11323A; --ink-soft:#3A5E66; --muted:#445D61;
+  --shadow:0 2px 0 rgba(17,50,58,.09), 0 12px 26px -14px rgba(17,50,58,.4);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Nunito",system-ui,-apple-system,sans-serif;font-size:16px;
+  -webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:"Baloo Bhaijaan 2","Nunito",system-ui,sans-serif;font-weight:700}
+a{color:inherit}

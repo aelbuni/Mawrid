@@ -1,0 +1,10 @@
+.home{min-height:100dvh;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding:32px 16px;text-align:center;gap:28px}
+.home h1{font-size:clamp(32px,6vw,48px);margin:0}
+.home .tagline{font-size:17px;color:var(--muted);font-weight:700;margin:0;max-width:44ch}
+.tools{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;max-width:720px}
+.tool-card{display:block;width:260px;padding:22px;border-radius:20px;background:var(--paper);
+  box-shadow:var(--shadow);text-decoration:none;transition:transform .18s}
+.tool-card:hover{transform:translateY(-3px)}
+.tool-card h2{font-size:19px;margin:0 0 8px}
+.tool-card p{font-size:14px;color:var(--muted);font-weight:600;line-height:1.5;margin:0}

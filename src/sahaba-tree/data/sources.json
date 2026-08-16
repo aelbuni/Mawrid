@@ -1,0 +1,234 @@
+{
+  "cohortSources": {
+    "meccan_earliest": {
+      "en": [
+        {
+          "title": "al-Sira al-Nabawiyya (\"The Life of the Prophet\")",
+          "author": "Muhammad ibn Ishaq (d. 150 AH / 767 CE), in the recension of Abd al-Malik ibn Hisham (d. 213 AH / 828 CE)",
+          "note": "The earliest connected biography of the Prophet ﷺ to survive in full. Ibn Ishaq's own text is lost; it survives through Ibn Hisham's edited recension. The standard reference is the Cairo edition (Mustafa al-Saqa, Ibrahim al-Abyari, Abd al-Hafiz Shalabi, eds.); English readers commonly use A. Guillaume's 1955 translation, The Life of Muhammad."
+        },
+        {
+          "title": "al-Tabaqat al-Kubra (\"The Great Book of Generations\")",
+          "author": "Muhammad ibn Sad (d. 230 AH / 845 CE)",
+          "note": "A biographical dictionary of the Prophet ﷺ and the Companions, organized by generation (tabaqa) and, within Madinan entries, largely by tribe and clan -- the closest classical structure to the cohort model this app uses. Standard reference: the Beirut, Dar Sadir edition."
+        },
+        {
+          "title": "al-Isaba fi Tamyiz al-Sahaba (\"Fair Judgment in Distinguishing the Companions\")",
+          "author": "Ahmad ibn Ali ibn Hajar al-Asqalani (d. 852 AH / 1449 CE)",
+          "note": "The most comprehensive classical biographical dictionary of the Companions, roughly 12,300 entries, absorbing and cross-checking every earlier work in the genre. Sorts entries into four classes by strength of evidence for actual companionship -- a ready-made confidence signal this app's `confidence` field draws on in spirit."
+        },
+        {
+          "title": "al-Tabaqat al-Kubra (\"The Great Book of Generations\")",
+          "author": "Muhammad ibn Sad (d. 230 AH / 845 CE)",
+          "note": "A biographical dictionary of the Prophet ﷺ and the Companions, organized by generation (tabaqa) and, within Madinan entries, largely by tribe and clan -- the closest classical structure to the cohort model this app uses. Standard reference: the Beirut, Dar Sadir edition."
+        },
+        {
+          "title": "al-Jami al-Sahih, Book of the Virtues of the Companions of the Prophet ﷺ",
+          "author": "Muhammad ibn Ismail al-Bukhari (d. 256 AH / 870 CE)",
+          "note": "The specific book (kitab) within Sahih al-Bukhari devoted to the merits of individual Companions -- the direct source for many of the fadail-style facts in this dataset."
+        },
+        {
+          "title": "al-Jami al-Sahih (\"Sahih al-Bukhari\")",
+          "author": "Muhammad ibn Ismail al-Bukhari (d. 256 AH / 870 CE)",
+          "note": "The most authoritative hadith collection in Sunni Islam. Standard reference numbering follows the Fath al-Bari edition/numbering, widely mirrored online (e.g., sunnah.com)."
+        }
+      ],
+      "ar": [
+        {
+          "title": "السيرة النبوية",
+          "author": "محمد بن إسحاق (ت ١٥٠هـ)، برواية عبد الملك بن هشام (ت ٢١٣هـ)",
+          "note": "أقدم سيرة نبوية متصلة وصلتنا كاملة. أصل ابن إسحاق مفقود، وما وصلنا هو رواية ابن هشام المهذبة عنه. الطبعة المعتمدة هي طبعة القاهرة (تحقيق مصطفى السقا وإبراهيم الأبياري وعبد الحفيظ شلبي)."
+        },
+        {
+          "title": "الطبقات الكبرى",
+          "author": "محمد بن سعد (ت ٢٣٠هـ)",
+          "note": "معجم تراجم للنبي ﷺ والصحابة، مرتب على الطبقات، وداخل كل طبقة غالبًا على القبائل والبطون. الطبعة المعتمدة: دار صادر، بيروت."
+        },
+        {
+          "title": "الإصابة في تمييز الصحابة",
+          "author": "أحمد بن علي بن حجر العسقلاني (ت ٨٥٢هـ)",
+          "note": "أشمل معجم تراجم للصحابة في التراث الإسلامي، نحو ١٢٣٠٠ ترجمة، يجمع ما سبقه من المصنفات في الباب ويوازن بينها. يصنف ابن حجر كل ترجمة إلى واحدة من أربع طبقات بحسب قوة إثبات الصحبة."
+        },
+        {
+          "title": "الطبقات الكبرى",
+          "author": "محمد بن سعد (ت ٢٣٠هـ)",
+          "note": "معجم تراجم للنبي ﷺ والصحابة، مرتب على الطبقات، وداخل كل طبقة غالبًا على القبائل والبطون. الطبعة المعتمدة: دار صادر، بيروت."
+        },
+        {
+          "title": "الجامع الصحيح، كتاب فضائل أصحاب النبي ﷺ",
+          "author": "محمد بن إسماعيل البخاري (ت ٢٥٦هـ)",
+          "note": "الكتاب المخصص داخل صحيح البخاري لفضائل الصحابة أفرادًا، وهو المصدر المباشر لكثير من فضائل هذا التطبيق."
+        },
+        {
+          "title": "الجامع الصحيح (صحيح البخاري)",
+          "author": "محمد بن إسماعيل البخاري (ت ٢٥٦هـ)",
+          "note": "أصح كتب الحديث عند أهل السنة. الترقيم المعتمد هنا يتبع ترقيم فتح الباري الشائع."
+        }
+      ]
+    },
+    "meccan_later": {
+      "en": [
+        {
+          "title": "al-Tabaqat al-Kubra (\"The Great Book of Generations\")",
+          "author": "Muhammad ibn Sad (d. 230 AH / 845 CE)",
+          "note": "A biographical dictionary of the Prophet ﷺ and the Companions, organized by generation (tabaqa) and, within Madinan entries, largely by tribe and clan -- the closest classical structure to the cohort model this app uses. Standard reference: the Beirut, Dar Sadir edition."
+        },
+        {
+          "title": "al-Isaba fi Tamyiz al-Sahaba (\"Fair Judgment in Distinguishing the Companions\")",
+          "author": "Ahmad ibn Ali ibn Hajar al-Asqalani (d. 852 AH / 1449 CE)",
+          "note": "The most comprehensive classical biographical dictionary of the Companions, roughly 12,300 entries, absorbing and cross-checking every earlier work in the genre. Sorts entries into four classes by strength of evidence for actual companionship -- a ready-made confidence signal this app's `confidence` field draws on in spirit."
+        },
+        {
+          "title": "al-Jami al-Sahih (\"Sahih al-Bukhari\")",
+          "author": "Muhammad ibn Ismail al-Bukhari (d. 256 AH / 870 CE)",
+          "note": "The most authoritative hadith collection in Sunni Islam. Standard reference numbering follows the Fath al-Bari edition/numbering, widely mirrored online (e.g., sunnah.com)."
+        },
+        {
+          "title": "al-Musnad al-Sahih (\"Sahih Muslim\")",
+          "author": "Muslim ibn al-Hajjaj al-Naysaburi (d. 261 AH / 875 CE)",
+          "note": "The second most authoritative Sunni hadith collection after Bukhari. Standard reference numbering follows the widely mirrored online numbering (e.g., sunnah.com)."
+        },
+        {
+          "title": "al-Sira al-Nabawiyya (\"The Life of the Prophet\")",
+          "author": "Muhammad ibn Ishaq (d. 150 AH / 767 CE), in the recension of Abd al-Malik ibn Hisham (d. 213 AH / 828 CE)",
+          "note": "The earliest connected biography of the Prophet ﷺ to survive in full. Ibn Ishaq's own text is lost; it survives through Ibn Hisham's edited recension. The standard reference is the Cairo edition (Mustafa al-Saqa, Ibrahim al-Abyari, Abd al-Hafiz Shalabi, eds.); English readers commonly use A. Guillaume's 1955 translation, The Life of Muhammad."
+        }
+      ],
+      "ar": [
+        {
+          "title": "الطبقات الكبرى",
+          "author": "محمد بن سعد (ت ٢٣٠هـ)",
+          "note": "معجم تراجم للنبي ﷺ والصحابة، مرتب على الطبقات، وداخل كل طبقة غالبًا على القبائل والبطون. الطبعة المعتمدة: دار صادر، بيروت."
+        },
+        {
+          "title": "الإصابة في تمييز الصحابة",
+          "author": "أحمد بن علي بن حجر العسقلاني (ت ٨٥٢هـ)",
+          "note": "أشمل معجم تراجم للصحابة في التراث الإسلامي، نحو ١٢٣٠٠ ترجمة، يجمع ما سبقه من المصنفات في الباب ويوازن بينها. يصنف ابن حجر كل ترجمة إلى واحدة من أربع طبقات بحسب قوة إثبات الصحبة."
+        },
+        {
+          "title": "الجامع الصحيح (صحيح البخاري)",
+          "author": "محمد بن إسماعيل البخاري (ت ٢٥٦هـ)",
+          "note": "أصح كتب الحديث عند أهل السنة. الترقيم المعتمد هنا يتبع ترقيم فتح الباري الشائع."
+        },
+        {
+          "title": "المسند الصحيح (صحيح مسلم)",
+          "author": "مسلم بن الحجاج النيسابوري (ت ٢٦١هـ)",
+          "note": "ثاني أصح كتب الحديث عند أهل السنة بعد البخاري."
+        },
+        {
+          "title": "السيرة النبوية",
+          "author": "محمد بن إسحاق (ت ١٥٠هـ)، برواية عبد الملك بن هشام (ت ٢١٣هـ)",
+          "note": "أقدم سيرة نبوية متصلة وصلتنا كاملة. أصل ابن إسحاق مفقود، وما وصلنا هو رواية ابن هشام المهذبة عنه. الطبعة المعتمدة هي طبعة القاهرة (تحقيق مصطفى السقا وإبراهيم الأبياري وعبد الحفيظ شلبي)."
+        }
+      ]
+    },
+    "aqaba_1": {
+      "en": [
+        {
+          "title": "al-Sira al-Nabawiyya (\"The Life of the Prophet\")",
+          "author": "Muhammad ibn Ishaq (d. 150 AH / 767 CE), in the recension of Abd al-Malik ibn Hisham (d. 213 AH / 828 CE)",
+          "note": "The earliest connected biography of the Prophet ﷺ to survive in full. Ibn Ishaq's own text is lost; it survives through Ibn Hisham's edited recension. The standard reference is the Cairo edition (Mustafa al-Saqa, Ibrahim al-Abyari, Abd al-Hafiz Shalabi, eds.); English readers commonly use A. Guillaume's 1955 translation, The Life of Muhammad."
+        },
+        {
+          "title": "al-Tabaqat al-Kubra (\"The Great Book of Generations\")",
+          "author": "Muhammad ibn Sad (d. 230 AH / 845 CE)",
+          "note": "A biographical dictionary of the Prophet ﷺ and the Companions, organized by generation (tabaqa) and, within Madinan entries, largely by tribe and clan -- the closest classical structure to the cohort model this app uses. Standard reference: the Beirut, Dar Sadir edition."
+        },
+        {
+          "title": "al-Jami al-Sahih (\"Sahih al-Bukhari\")",
+          "author": "Muhammad ibn Ismail al-Bukhari (d. 256 AH / 870 CE)",
+          "note": "The most authoritative hadith collection in Sunni Islam. Standard reference numbering follows the Fath al-Bari edition/numbering, widely mirrored online (e.g., sunnah.com)."
+        }
+      ],
+      "ar": [
+        {
+          "title": "السيرة النبوية",
+          "author": "محمد بن إسحاق (ت ١٥٠هـ)، برواية عبد الملك بن هشام (ت ٢١٣هـ)",
+          "note": "أقدم سيرة نبوية متصلة وصلتنا كاملة. أصل ابن إسحاق مفقود، وما وصلنا هو رواية ابن هشام المهذبة عنه. الطبعة المعتمدة هي طبعة القاهرة (تحقيق مصطفى السقا وإبراهيم الأبياري وعبد الحفيظ شلبي)."
+        },
+        {
+          "title": "الطبقات الكبرى",
+          "author": "محمد بن سعد (ت ٢٣٠هـ)",
+          "note": "معجم تراجم للنبي ﷺ والصحابة، مرتب على الطبقات، وداخل كل طبقة غالبًا على القبائل والبطون. الطبعة المعتمدة: دار صادر، بيروت."
+        },
+        {
+          "title": "الجامع الصحيح (صحيح البخاري)",
+          "author": "محمد بن إسماعيل البخاري (ت ٢٥٦هـ)",
+          "note": "أصح كتب الحديث عند أهل السنة. الترقيم المعتمد هنا يتبع ترقيم فتح الباري الشائع."
+        }
+      ]
+    },
+    "aqaba_2": {
+      "en": [
+        {
+          "title": "al-Sira al-Nabawiyya (\"The Life of the Prophet\")",
+          "author": "Muhammad ibn Ishaq (d. 150 AH / 767 CE), in the recension of Abd al-Malik ibn Hisham (d. 213 AH / 828 CE)",
+          "note": "The earliest connected biography of the Prophet ﷺ to survive in full. Ibn Ishaq's own text is lost; it survives through Ibn Hisham's edited recension. The standard reference is the Cairo edition (Mustafa al-Saqa, Ibrahim al-Abyari, Abd al-Hafiz Shalabi, eds.); English readers commonly use A. Guillaume's 1955 translation, The Life of Muhammad."
+        },
+        {
+          "title": "al-Tabaqat al-Kubra (\"The Great Book of Generations\")",
+          "author": "Muhammad ibn Sad (d. 230 AH / 845 CE)",
+          "note": "A biographical dictionary of the Prophet ﷺ and the Companions, organized by generation (tabaqa) and, within Madinan entries, largely by tribe and clan -- the closest classical structure to the cohort model this app uses. Standard reference: the Beirut, Dar Sadir edition."
+        },
+        {
+          "title": "al-Jami al-Sahih (\"Sahih al-Bukhari\")",
+          "author": "Muhammad ibn Ismail al-Bukhari (d. 256 AH / 870 CE)",
+          "note": "The most authoritative hadith collection in Sunni Islam. Standard reference numbering follows the Fath al-Bari edition/numbering, widely mirrored online (e.g., sunnah.com)."
+        }
+      ],
+      "ar": [
+        {
+          "title": "السيرة النبوية",
+          "author": "محمد بن إسحاق (ت ١٥٠هـ)، برواية عبد الملك بن هشام (ت ٢١٣هـ)",
+          "note": "أقدم سيرة نبوية متصلة وصلتنا كاملة. أصل ابن إسحاق مفقود، وما وصلنا هو رواية ابن هشام المهذبة عنه. الطبعة المعتمدة هي طبعة القاهرة (تحقيق مصطفى السقا وإبراهيم الأبياري وعبد الحفيظ شلبي)."
+        },
+        {
+          "title": "الطبقات الكبرى",
+          "author": "محمد بن سعد (ت ٢٣٠هـ)",
+          "note": "معجم تراجم للنبي ﷺ والصحابة، مرتب على الطبقات، وداخل كل طبقة غالبًا على القبائل والبطون. الطبعة المعتمدة: دار صادر، بيروت."
+        },
+        {
+          "title": "الجامع الصحيح (صحيح البخاري)",
+          "author": "محمد بن إسماعيل البخاري (ت ٢٥٦هـ)",
+          "note": "أصح كتب الحديث عند أهل السنة. الترقيم المعتمد هنا يتبع ترقيم فتح الباري الشائع."
+        }
+      ]
+    }
+  },
+  "backboneSource": {
+    "en": [
+      {
+        "title": "Jamharat Ansab al-Arab (\"The Compendium of Arab Genealogies\")",
+        "author": "Ali ibn Ahmad ibn Hazm al-Andalusi (d. 456 AH / 1064 CE)",
+        "note": "The standard classical reference for Arab tribal genealogy, and the source for the curated lineage backbone (backbone.json) this app's family tree is built on. Where an edge in the tree comes from this backbone rather than from a person's own individually cited sources, it is marked here as such."
+      },
+      {
+        "title": "al-Sira al-Nabawiyya (\"The Life of the Prophet\")",
+        "author": "Muhammad ibn Ishaq (d. 150 AH / 767 CE), in the recension of Abd al-Malik ibn Hisham (d. 213 AH / 828 CE)",
+        "note": "The earliest connected biography of the Prophet ﷺ to survive in full. Ibn Ishaq's own text is lost; it survives through Ibn Hisham's edited recension. The standard reference is the Cairo edition (Mustafa al-Saqa, Ibrahim al-Abyari, Abd al-Hafiz Shalabi, eds.); English readers commonly use A. Guillaume's 1955 translation, The Life of Muhammad."
+      },
+      {
+        "title": "al-Tabaqat al-Kubra (\"The Great Book of Generations\")",
+        "author": "Muhammad ibn Sad (d. 230 AH / 845 CE)",
+        "note": "A biographical dictionary of the Prophet ﷺ and the Companions, organized by generation (tabaqa) and, within Madinan entries, largely by tribe and clan -- the closest classical structure to the cohort model this app uses. Standard reference: the Beirut, Dar Sadir edition."
+      }
+    ],
+    "ar": [
+      {
+        "title": "جمهرة أنساب العرب",
+        "author": "علي بن أحمد بن حزم الأندلسي (ت ٤٥٦هـ)",
+        "note": "المرجع الكلاسيكي المعتمد في أنساب العرب، وهو مصدر السلسلة النسبية المعتمدة في هذا التطبيق (backbone.json). حيث تكون صلة القرابة في الشجرة مأخوذة من هذه السلسلة لا من مصادر الشخص نفسه المذكورة في ترجمته، يُشار إلى ذلك صراحة."
+      },
+      {
+        "title": "السيرة النبوية",
+        "author": "محمد بن إسحاق (ت ١٥٠هـ)، برواية عبد الملك بن هشام (ت ٢١٣هـ)",
+        "note": "أقدم سيرة نبوية متصلة وصلتنا كاملة. أصل ابن إسحاق مفقود، وما وصلنا هو رواية ابن هشام المهذبة عنه. الطبعة المعتمدة هي طبعة القاهرة (تحقيق مصطفى السقا وإبراهيم الأبياري وعبد الحفيظ شلبي)."
+      },
+      {
+        "title": "الطبقات الكبرى",
+        "author": "محمد بن سعد (ت ٢٣٠هـ)",
+        "note": "معجم تراجم للنبي ﷺ والصحابة، مرتب على الطبقات، وداخل كل طبقة غالبًا على القبائل والبطون. الطبعة المعتمدة: دار صادر، بيروت."
+      }
+    ]
+  }
+}
