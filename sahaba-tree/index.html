@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Family Tree of the Companions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../src/sahaba-tree/style.css">
+</head>
+<body>
+<a href="#stage" class="skip">Skip to the tree</a>
+<div class="app">
+  <header>
+    <div class="brand"><h1>The Companions</h1>
+      <span class="sub">who they were, and how they were related</span></div>
+    <div class="tabs" role="tablist" aria-label="Views">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="stage" data-view="tree">Family tree</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="stage" data-view="time">Timeline</button>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="search">
+      <span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span>
+      <input id="q" type="search" placeholder="Find a companion…" autocomplete="off"
+             role="combobox" aria-expanded="false" aria-controls="res" aria-label="Find a companion">
+      <div class="results" id="res" role="listbox" hidden></div>
+    </div>
+    <button class="btn" id="connect" aria-pressed="false">Connect two</button>
+    <button class="btn" id="reset">Show all</button>
+    <button class="btn lang" id="lang">العربية</button>
+    <div class="spacer"></div>
+    <span id="stat"></span>
+  </div>
+
+  <div class="stage" id="stage" tabindex="-1">
+    <svg id="tree" role="application" aria-label="Family tree of the Companions">
+      <g id="cam"><g id="links"></g><g id="nodes"></g></g>
+    </svg>
+    <div class="zoom">
+      <button id="zin" aria-label="Zoom in">+</button>
+      <button id="zout" aria-label="Zoom out">−</button>
+      <button id="zfit" aria-label="Fit to screen" style="font-size:14px">fit</button>
+    </div>
+    <div class="hint" id="hint" hidden></div>
+    <div class="timeline" id="timeline" hidden></div>
+  </div>
+</div>
+<div class="card" id="card" role="dialog" aria-modal="false" aria-label="Companion details"></div>
+<div class="sr" id="live" role="status" aria-live="polite"></div>
+<script type="module" src="../src/sahaba-tree/main.js"></script>
+</body>
+</html>

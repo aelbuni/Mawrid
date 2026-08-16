@@ -1,0 +1,23 @@
+{
+  "cohortOrder": [
+    "meccan_earliest",
+    "meccan_later",
+    "aqaba_1",
+    "aqaba_2"
+  ],
+  "cohortLabel": {
+    "meccan_earliest": "The first believers in Makkah",
+    "meccan_later": "Later believers in Makkah",
+    "abyssinia_1": "First journey to Abyssinia",
+    "abyssinia_2": "Second journey to Abyssinia",
+    "aqaba_1": "First pledge at Aqaba",
+    "aqaba_2": "Second pledge at Aqaba",
+    "hijra": "The journey to Madinah",
+    "badr": "By the time of Badr",
+    "uhud_khandaq": "Uhud and the Trench",
+    "hudaybiyya": "Hudaybiyya",
+    "pre_conquest": "Before the return to Makkah",
+    "fath_makka": "The return to Makkah",
+    "wufud": "The year of the delegations"
+  }
+}

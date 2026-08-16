@@ -1,0 +1,199 @@
+:root{
+  --ground:#D9E8E4; --ground-deep:#C3D9D4; --paper:#fff;
+  --ink:#11323A;                /* 13.6:1 on paper  */
+  --ink-soft:#3A5E66;           /*  7.1:1 on paper  */
+  --muted:#445D61;              /*  7.0:1 on paper  */
+  --line:#8FB3AC; --amber:#EE9B2E; --amber-ink:#7E4C0A; --rose:#D24C7C;
+  --rose-ink:#8E2350; --gold:#F5C960; --focus:#0B5FA5;
+  --shadow:0 2px 0 rgba(17,50,58,.09), 0 12px 26px -14px rgba(17,50,58,.4);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--ground);color:var(--ink);overflow:hidden;
+  font-family:"Nunito",system-ui,-apple-system,sans-serif;font-size:16px;
+  -webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%}
+h1,h2,h3,.disp{font-family:"Baloo Bhaijaan 2","Nunito",system-ui,sans-serif;font-weight:700}
+.ar{font-family:"Baloo Bhaijaan 2",system-ui,sans-serif;direction:rtl;unicode-bidi:isolate}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+:focus-visible{outline:4px solid var(--focus);outline-offset:2px;border-radius:10px}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:-999px;top:8px;z-index:99;background:var(--ink);color:#fff;
+  padding:10px 16px;border-radius:10px;font-weight:700}
+.skip:focus{left:8px}
+
+.app{display:flex;flex-direction:column;height:100dvh}
+header{flex:none;display:flex;align-items:center;gap:14px;padding:10px 16px;
+  background:var(--paper);border-bottom:2px solid var(--ground-deep);z-index:20}
+.brand h1{font-size:19px;margin:0;white-space:nowrap;font-weight:800}
+.brand .sub{font-size:12.5px;color:var(--muted);white-space:nowrap;font-weight:700}
+.brand{display:flex;align-items:baseline;gap:10px;min-width:0}
+.tabs{display:flex;gap:4px;margin-inline-start:auto;background:var(--ground);padding:4px;border-radius:999px}
+.tab{padding:10px 16px;border-radius:999px;font-weight:800;font-size:14px;color:var(--ink-soft);
+  white-space:nowrap;min-height:44px}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff}
+
+.toolbar{flex:none;display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:9px 16px;
+  background:var(--paper);border-bottom:2px solid var(--ground-deep);z-index:15}
+.search{position:relative;flex:1 1 190px;max-width:280px}
+.search input{width:100%;min-height:44px;padding:10px 14px 10px 36px;border-radius:999px;
+  font-size:15px;font-weight:700;border:2px solid var(--ground-deep);background:var(--ground);
+  color:var(--ink);font-family:inherit}
+.search input::placeholder{color:var(--muted);font-weight:600}
+.search .ico{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.results{position:absolute;top:calc(100% + 6px);inset-inline:0;background:var(--paper);
+  border-radius:14px;box-shadow:var(--shadow);overflow:hidden auto;z-index:40;max-height:300px}
+.results button{display:flex;justify-content:space-between;gap:10px;width:100%;text-align:left;
+  padding:12px 14px;font-size:14.5px;font-weight:700;min-height:44px;align-items:center}
+.results button:hover,.results button[aria-selected="true"]{background:var(--ground)}
+.results .alt{color:var(--muted);font-weight:600}
+.btn{padding:10px 15px;border-radius:999px;font-weight:800;font-size:14px;background:var(--ground);
+  color:var(--ink-soft);border:2px solid transparent;white-space:nowrap;min-height:44px}
+.btn:hover{background:var(--ground-deep)}
+.btn[aria-pressed="true"]{background:var(--amber);color:var(--amber-ink);border-color:#C97F13}
+.lang{font-family:"Baloo Bhaijaan 2",sans-serif;font-weight:600;font-size:15px}
+.spacer{flex:1}
+#stat{font-size:12.5px;color:var(--muted);font-weight:700}
+
+.stage{position:relative;flex:1;min-height:0;overflow:hidden;touch-action:none}
+svg#tree{width:100%;height:100%;display:block;cursor:grab}
+svg#tree.drag{cursor:grabbing}
+.link{fill:none;stroke:var(--line);stroke-width:2.5;stroke-linecap:round}
+.link.spine{stroke:#7BA49C;stroke-width:3}
+.link.approx{stroke-dasharray:5 4}
+.link.dim{stroke-opacity:.16}
+.link.lit-a{stroke:var(--amber);stroke-width:6.5}
+.link.lit-b{stroke:var(--rose);stroke-width:6.5}
+.link.tracing{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);
+  animation:draw .5s cubic-bezier(.4,0,.2,1) forwards;animation-delay:var(--d)}
+@keyframes draw{to{stroke-dashoffset:0}}
+.node{cursor:pointer}
+.hit{fill:transparent}
+.node .pill{stroke:#fff;stroke-width:2.5;rx:14}
+.node .nm{font-family:"Baloo Bhaijaan 2",sans-serif;font-weight:700;font-size:15px;dominant-baseline:middle}
+.node .alt{font-family:"Baloo Bhaijaan 2",sans-serif;font-weight:600;font-size:12.5px;dominant-baseline:middle}
+.node .pill{rx:15}
+.anc .pill{fill:var(--paper);stroke:var(--line);stroke-width:2}
+.anc .nm{fill:var(--ink);font-size:14px}
+.anc .alt{fill:var(--muted)}
+.sah .nm{fill:#fff}
+.sah .alt{fill:rgba(255,255,255,.9)}
+.node.dim{opacity:.22}
+.node.meet .pill{stroke:var(--gold);stroke-width:5}
+.node.meet{animation:pop .55s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{0%{transform:scale(1)}45%{transform:scale(1.14)}100%{transform:scale(1)}}
+.node:hover .pill,.node:focus-visible .pill{stroke:var(--ink)}
+.node .more{font-size:13px;font-weight:800;fill:var(--muted);font-family:"Nunito",sans-serif}
+.star{fill:var(--gold)}
+.bubble{cursor:pointer}
+.bubble .ring{fill:var(--paper);stroke:var(--line);stroke-width:2.5;transition:fill .18s,stroke .18s}
+.bubble text{font-family:"Nunito",sans-serif;font-size:12.5px;font-weight:800;fill:var(--ink-soft)}
+.bubble:hover .ring,.bubble:focus-visible .ring{fill:var(--gold);stroke:var(--ink)}
+.bubble.dim{opacity:.2}
+.node.enter{animation:grow .4s cubic-bezier(.22,1,.36,1)}
+@keyframes grow{from{opacity:0;transform:scale(.72)}to{opacity:1;transform:scale(1)}}
+
+.hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:var(--ink);
+  color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;font-weight:700;
+  pointer-events:none;max-width:92vw;text-align:center}
+.zoom{position:absolute;inset-inline-end:12px;bottom:12px;display:flex;flex-direction:column;gap:8px}
+.zoom button{width:46px;height:46px;border-radius:14px;background:var(--paper);box-shadow:var(--shadow);
+  font-size:19px;font-weight:800;color:var(--ink-soft);display:grid;place-items:center}
+.zoom button:hover{background:var(--ground)}
+
+.verdict{position:absolute;left:50%;top:12px;transform:translateX(-50%);background:var(--paper);
+  border-radius:20px;box-shadow:var(--shadow);padding:15px 22px;max-width:min(580px,94vw);
+  text-align:center;z-index:10;animation:drop .4s cubic-bezier(.22,1,.36,1)}
+@keyframes drop{from{opacity:0;transform:translate(-50%,-14px)}to{opacity:1;transform:translate(-50%,0)}}
+.verdict .who{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:7px}
+.verdict .chip{padding:5px 12px;border-radius:999px;font-weight:800;font-size:13.5px}
+.verdict .chip.a{background:#FCE7C8;color:var(--amber-ink)}
+.verdict .chip.b{background:#FBDCE7;color:var(--rose-ink)}
+.verdict .msg{font-size:16px;font-weight:700;line-height:1.5}
+.verdict .msg b{background:linear-gradient(transparent 60%,var(--gold) 60%);padding:0 3px}
+.verdict .sub{font-size:13px;color:var(--muted);margin-top:5px;font-weight:700}
+
+.timeline{position:absolute;inset:0;overflow-y:auto;padding:20px 16px 60px}
+.band{max-width:940px;margin:0 auto 12px;background:var(--paper);border-radius:20px;
+  box-shadow:var(--shadow);overflow:hidden}
+.band-h{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--ground)}
+.band-h .step{width:34px;height:34px;flex:none;border-radius:11px;background:var(--ink);color:#fff;
+  display:grid;place-items:center;font-weight:800;font-size:15px;font-family:"Baloo Bhaijaan 2",sans-serif}
+.band-h h3{margin:0;font-size:17px}
+.band-h .count{margin-inline-start:auto;font-size:12.5px;color:var(--muted);font-weight:800;white-space:nowrap}
+.band-b{display:flex;flex-wrap:wrap;gap:8px;padding:14px 18px 6px}
+.medal{display:flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border-radius:999px;
+  background:var(--ground);font-weight:700;font-size:14px;min-height:44px}
+.medal:hover{background:var(--ground-deep)}
+.medal .ini{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;
+  font-family:"Baloo Bhaijaan 2",sans-serif;font-weight:800;font-size:14px;flex:none}
+.medal .rk{font-size:11.5px;color:var(--muted);font-weight:800}
+.band-note{padding:8px 18px 4px;font-size:13px;color:var(--muted);font-weight:600;line-height:1.6}
+.band-cite{padding:6px 18px 18px;font-size:11.5px;color:var(--muted);font-weight:600;line-height:1.7;display:flex;flex-wrap:wrap;gap:4px 8px}
+.band-cite-lbl{font-weight:800;letter-spacing:.4px;text-transform:uppercase;font-size:10.5px;color:var(--ink-soft)}
+.band-cite-item{white-space:nowrap}
+.band-cite-item:not(:last-child)::after{content:" ·";margin-inline-start:8px;color:var(--line)}
+
+.card{position:absolute;inset-inline-end:14px;top:14px;bottom:14px;width:372px;
+  max-width:calc(100vw - 28px);background:var(--paper);border-radius:22px;box-shadow:var(--shadow);
+  display:flex;flex-direction:column;z-index:30;overflow:hidden;visibility:hidden;
+  transform:translateX(calc((100% + 24px) * var(--dir,1)));
+  transition:transform .34s cubic-bezier(.22,1,.36,1),visibility .34s}
+.card.open{transform:none;visibility:visible}
+body[dir="rtl"] .card{--dir:-1}
+.card-top{padding:20px;color:#fff;position:relative;flex:none}
+.card-top .x{position:absolute;inset-inline-end:12px;top:12px;width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,.26);color:#fff;font-size:20px;font-weight:800;display:grid;place-items:center}
+.card-top .ini{width:56px;height:56px;border-radius:17px;background:rgba(255,255,255,.26);
+  display:grid;place-items:center;font-family:"Baloo Bhaijaan 2",sans-serif;font-size:25px;
+  font-weight:800;margin-bottom:12px}
+.card-top h2{margin:0;font-size:22px;line-height:1.25}
+.card-top .h-alt{font-size:16px;margin-top:4px;opacity:.95;font-weight:600}
+.card-top .h-sub{font-size:13px;opacity:.9;margin-top:8px;font-weight:700}
+.card-body{padding:18px 20px 24px;overflow-y:auto;flex:1}
+.story{font-size:16px;line-height:1.65;margin:0 0 18px}
+.facts{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:10px}
+.facts li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;line-height:1.55;font-weight:600}
+.facts .b{flex:none;width:24px;height:24px;border-radius:8px;background:var(--ground);
+  color:var(--ink-soft);display:grid;place-items:center;font-size:12px;font-weight:800;margin-top:1px}
+.row{margin-bottom:16px}
+.row .lbl{font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;
+  color:var(--muted);margin-bottom:7px}
+.row .val{font-size:15px;font-weight:600;line-height:1.5}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{background:var(--ground);padding:6px 12px;border-radius:999px;font-size:13px;font-weight:700}
+.flag{background:#FFF6E2;border:2px solid #E5C173;border-radius:14px;padding:12px 14px;
+  font-size:13.5px;line-height:1.6;font-weight:600;color:#5E4310}
+.flag b{display:block;margin-bottom:4px;font-size:11.5px;letter-spacing:.6px;text-transform:uppercase}
+.cite-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.cite{font-size:12.5px;line-height:1.55;padding-inline-start:14px;border-inline-start:2px solid var(--ground-deep)}
+.cite-t{display:block;font-weight:800;color:var(--ink-soft);font-size:13px}
+.cite-a{display:block;color:var(--muted);font-weight:600;margin-top:1px}
+.cite-n{display:block;color:var(--muted);font-weight:500;margin-top:3px;line-height:1.6}
+.gen-note{font-size:12px;font-weight:600;line-height:1.5;margin-top:6px;padding:7px 10px;border-radius:10px}
+.gen-note.gen-ok{background:var(--ground);color:var(--ink-soft)}
+.gen-note.gen-approx{background:#FFF6E2;color:#6B4E12;border:1px solid #E5C173}
+.card-act{display:flex;gap:8px;padding:0 20px 20px}
+.card-act button{flex:1;padding:14px 10px;border-radius:14px;background:var(--ink);color:#fff;
+  font-weight:800;font-size:14px;min-height:48px}
+.card-act button.alt{background:var(--ground);color:var(--ink-soft)}
+
+body[dir="rtl"]{font-family:"Baloo Bhaijaan 2","Nunito",system-ui,sans-serif}
+body[dir="rtl"] .search input{padding:10px 36px 10px 14px}
+body[dir="rtl"] .search .ico{left:auto;right:13px}
+body[dir="rtl"] .results button{text-align:right}
+body[dir="rtl"] .row .lbl{letter-spacing:0}
+body[dir="rtl"] .story,body[dir="rtl"] .val,body[dir="rtl"] .flag,body[dir="rtl"] .facts li{line-height:1.85}
+body[dir="rtl"] .medal{padding:8px 8px 8px 14px}
+
+@media (max-width:760px){
+  .brand .sub{display:none}
+  .card{inset-inline:8px;top:auto;bottom:0;width:auto;max-height:76dvh;border-radius:22px 22px 0 0;
+    transform:translateY(calc(100% + 20px))}
+  body[dir="rtl"] .card{transform:translateY(calc(100% + 20px))}
+  .card.open,body[dir="rtl"] .card.open{transform:none}
+  .tab{padding:10px 13px;font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
