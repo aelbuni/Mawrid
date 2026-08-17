@@ -3,9 +3,8 @@ import { isAr, nameOf, tr } from "./i18n.js";
 import { skippable, openMany } from "./collapse.js";
 import { render, setHighlight } from "./render.js";
 import { centerOn } from "./pan-zoom.js";
-import { removeVerdict } from "./connect.js";
 import { openCard } from "./card.js";
-import { esc, q, res } from "./dom-utils.js";
+import { esc, q, res, showTreeView } from "./dom-utils.js";
 
 /* -------------------------------------------------------------- search */
 let hits = [], hi = -1;
@@ -43,7 +42,7 @@ function pickResult(pid) {
   res.hidden = true; q.value = ""; q.setAttribute("aria-expanded", "false");
   const p = PEOPLE[pid];
   const path = pathUp(p.node);
-  setHighlight({ a: path });
+  setHighlight(path);
   openMany(path.filter(skippable));
-  removeVerdict(); render({ trace: true }); centerOn(p.node); openCard(p.id);
+  showTreeView(); render({ trace: true }); centerOn(p.node); openCard(p.id);
 }

@@ -16,3 +16,14 @@ export const esc = s => (s || "").replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&l
 export const say = t => { live.textContent = ""; setTimeout(() => live.textContent = t, 40); };
 export const showHint = t => { hint.textContent = t; hint.hidden = false; };
 export const hideHint = () => hint.hidden = true;
+
+/* Switches to the family-tree tab/view. Actions that reveal something on the
+   tree (opening a card's "family line", picking a search result) need this
+   in case they were triggered while the timeline tab was showing -- otherwise
+   the tree updates invisibly behind it. */
+export function showTreeView() {
+  document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", String(t.dataset.view === "tree")));
+  svg.style.display = "block";
+  document.querySelector(".zoom").style.display = "flex";
+  tl.hidden = true;
+}
