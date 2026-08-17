@@ -57,7 +57,7 @@ export function initPanZoom() {
   // stationary tap never captures anything and native, uncaptured hit-testing
   // is what resolves the click -- correctly, on every child, every time.
   stage.addEventListener("pointerdown", e => {
-    if (e.target.closest(".zoom,.card,.verdict,.timeline")) return;
+    if (e.target.closest(".zoom,.card,.timeline")) return;
     drag = { id: e.pointerId, x: e.clientX, y: e.clientY, tx, ty }; moved = 0; captured = false;
   });
   stage.addEventListener("pointermove", e => {
@@ -77,12 +77,12 @@ export function initPanZoom() {
   };
   stage.addEventListener("pointerup", endDrag); stage.addEventListener("pointercancel", endDrag);
   stage.addEventListener("wheel", e => {
-    if (e.target.closest(".zoom,.card,.verdict,.timeline")) return;
+    if (e.target.closest(".zoom,.card,.timeline")) return;
     e.preventDefault();
     zoom(e.deltaY < 0 ? 1.12 : 1 / 1.12, e.offsetX, e.offsetY); }, { passive: false });
   let pinch = null;
   stage.addEventListener("touchstart", e => {
-    if (e.target.closest(".zoom,.card,.verdict,.timeline")) return;
+    if (e.target.closest(".zoom,.card,.timeline")) return;
     if (e.touches.length === 2) {
       const [a, b] = e.touches; pinch = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
     }

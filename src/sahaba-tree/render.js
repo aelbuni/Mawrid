@@ -8,12 +8,11 @@ import { gNodes, gLinks, esc } from "./dom-utils.js";
 
 const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* highlight state, set by connect.js / card.js / search.js via setHighlight */
-let litA = new Set(), litB = new Set(), meet = null;
-export function setHighlight({ a = [], b = [], meet: m = null } = {}) {
-  litA = new Set(a); litB = new Set(b); meet = m;
-}
-export const clearHighlight = () => setHighlight({});
+/* highlight state, set by card.js / search.js via setHighlight to trace a
+   companion's family line */
+let litA = new Set();
+export const setHighlight = (ids = []) => { litA = new Set(ids); };
+export const clearHighlight = () => setHighlight();
 
 /* current layout snapshot, refreshed on every render() */
 let laid = [], links = [], H = 0, minX = 0, maxX = 0;
@@ -72,16 +71,15 @@ function nodeInner(n) {
 
 export function render({ animate = true, trace = false, _pass = 0 } = {}) {
   ({ laid, links, H, minX, maxX } = layout());
-  const dimming = litA.size || litB.size;
+  const dimming = litA.size > 0;
   const seen = new Set();
 
   for (const n of laid) {
     seen.add(n.id);
     const [lab, alt, p] = labelsFor(n.id);
-    const lit = litA.has(n.id) || litB.has(n.id);
+    const lit = litA.has(n.id);
     let cls = "node " + (p ? "sah" : "anc");
     if (dimming && !lit) cls += " dim";
-    if (meet === n.id) cls += " meet";
     const sig = [lab, alt, n.w, SIGN(), cls, p ? colorOf(p) : "a"].join("|");
 
     let rec = els.get(n.id);
@@ -148,7 +146,7 @@ function drawLinks(dimming, trace) {
     let cls = "link";
     if (N.get(L.b)?.c) cls += " spine";
     if (N.get(L.b)?.x) cls += " approx";
-    const lit = litA.has(L.b) ? "lit-a" : litB.has(L.b) ? "lit-b" : null;
+    const lit = litA.has(L.b) ? "lit-a" : null;
     if (lit) cls += " " + lit; else if (dimming) cls += " dim";
     if (lit && trace && !REDUCED) { cls += " tracing"; el.style.setProperty("--d", (i++ * 55) + "ms"); }
     else el.style.removeProperty("--d");

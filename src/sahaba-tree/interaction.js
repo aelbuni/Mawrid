@@ -3,7 +3,6 @@ import { isAr, SIGN, fmt, tr, T } from "./i18n.js";
 import { childrenOf, isOpened, toggleOpen, openMany } from "./collapse.js";
 import { render, getNodeEl } from "./render.js";
 import { moved } from "./pan-zoom.js";
-import { getMode, choose } from "./connect.js";
 import { openCard } from "./card.js";
 import { say, gLinks, gNodes } from "./dom-utils.js";
 
@@ -52,7 +51,7 @@ function popBubble(b) {
 }
 
 function activate(id, pid) {
-  if (pid) { getMode() === "connect" ? choose(pid) : openCard(pid); return; }
+  if (pid) { openCard(pid); return; }
   const wasOpen = isOpened(id);
   toggleOpen(id);
   say(wasOpen ? tr("aCollapsed", "Branch closed") : tr("aExpanded", "Branch opened"));

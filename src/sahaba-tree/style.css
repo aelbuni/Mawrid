@@ -50,7 +50,6 @@ header{flex:none;display:flex;align-items:center;gap:14px;padding:10px 16px;
 .btn{padding:10px 15px;border-radius:999px;font-weight:800;font-size:14px;background:var(--ground);
   color:var(--ink-soft);border:2px solid transparent;white-space:nowrap;min-height:44px}
 .btn:hover{background:var(--ground-deep)}
-.btn[aria-pressed="true"]{background:var(--amber);color:var(--amber-ink);border-color:#C97F13}
 .lang{font-family:"Baloo Bhaijaan 2",sans-serif;font-weight:600;font-size:15px}
 .spacer{flex:1}
 #stat{font-size:12.5px;color:var(--muted);font-weight:700}
@@ -63,7 +62,6 @@ svg#tree.drag{cursor:grabbing}
 .link.approx{stroke-dasharray:5 4}
 .link.dim{stroke-opacity:.16}
 .link.lit-a{stroke:var(--amber);stroke-width:6.5}
-.link.lit-b{stroke:var(--rose);stroke-width:6.5}
 .link.tracing{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);
   animation:draw .5s cubic-bezier(.4,0,.2,1) forwards;animation-delay:var(--d)}
 @keyframes draw{to{stroke-dashoffset:0}}
@@ -79,9 +77,6 @@ svg#tree.drag{cursor:grabbing}
 .sah .nm{fill:#fff}
 .sah .alt{fill:rgba(255,255,255,.9)}
 .node.dim{opacity:.22}
-.node.meet .pill{stroke:var(--gold);stroke-width:5}
-.node.meet{animation:pop .55s cubic-bezier(.34,1.56,.64,1)}
-@keyframes pop{0%{transform:scale(1)}45%{transform:scale(1.14)}100%{transform:scale(1)}}
 .node:hover .pill,.node:focus-visible .pill{stroke:var(--ink)}
 .node .more{font-size:13px;font-weight:800;fill:var(--muted);font-family:"Nunito",sans-serif}
 .star{fill:var(--gold)}
@@ -100,18 +95,6 @@ svg#tree.drag{cursor:grabbing}
 .zoom button{width:46px;height:46px;border-radius:14px;background:var(--paper);box-shadow:var(--shadow);
   font-size:19px;font-weight:800;color:var(--ink-soft);display:grid;place-items:center}
 .zoom button:hover{background:var(--ground)}
-
-.verdict{position:absolute;left:50%;top:12px;transform:translateX(-50%);background:var(--paper);
-  border-radius:20px;box-shadow:var(--shadow);padding:15px 22px;max-width:min(580px,94vw);
-  text-align:center;z-index:10;animation:drop .4s cubic-bezier(.22,1,.36,1)}
-@keyframes drop{from{opacity:0;transform:translate(-50%,-14px)}to{opacity:1;transform:translate(-50%,0)}}
-.verdict .who{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:7px}
-.verdict .chip{padding:5px 12px;border-radius:999px;font-weight:800;font-size:13.5px}
-.verdict .chip.a{background:#FCE7C8;color:var(--amber-ink)}
-.verdict .chip.b{background:#FBDCE7;color:var(--rose-ink)}
-.verdict .msg{font-size:16px;font-weight:700;line-height:1.5}
-.verdict .msg b{background:linear-gradient(transparent 60%,var(--gold) 60%);padding:0 3px}
-.verdict .sub{font-size:13px;color:var(--muted);margin-top:5px;font-weight:700}
 
 .timeline{position:absolute;inset:0;overflow-y:auto;padding:20px 16px 60px;touch-action:auto}
 .band{max-width:940px;margin:0 auto 12px;background:var(--paper);border-radius:20px;

@@ -4,8 +4,7 @@ import { isAr, nameOf, fmt, T } from "./i18n.js";
 import { skippable, openMany } from "./collapse.js";
 import { render, setHighlight } from "./render.js";
 import { centerOn } from "./pan-zoom.js";
-import { connectFrom, removeVerdict } from "./connect.js";
-import { esc, say, card } from "./dom-utils.js";
+import { esc, say, card, showTreeView } from "./dom-utils.js";
 
 /* ---------------------------------------------------------------- card */
 let lastFocus = null;
@@ -48,20 +47,15 @@ export function openCard(pid) {
     </div>
     <div class="card-act">
       <button id="cline">${A ? (p.gender === "f" ? T.actLineF : T.actLine) : "Show their family line"}</button>
-      <button class="alt" id="cconn">${A ? (p.gender === "f" ? T.actConnectF : T.actConnect) : "Connect to someone"}</button>
     </div>`;
   card.classList.add("open");
   card.querySelector(".x").onclick = closeCard;
   card.querySelector(".x").focus();
   card.querySelector("#cline").onclick = () => {
     const path = pathUp(p.node);
-    setHighlight({ a: path });
+    setHighlight(path);
     openMany(path.filter(skippable));
-    removeVerdict(); closeCard(); render({ trace: true }); centerOn(p.node);
-  };
-  card.querySelector("#cconn").onclick = () => {
-    closeCard();
-    connectFrom(pid);
+    closeCard(); showTreeView(); render({ trace: true }); centerOn(p.node);
   };
   say(`${nameOf(p)}. ${A ? p.storyAr : p.story}`);
 }
