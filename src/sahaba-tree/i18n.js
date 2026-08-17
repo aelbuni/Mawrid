@@ -1,7 +1,7 @@
 import { DATA } from "./data.js";
 
 /* ------------------------------------------------------------------ i18n */
-let LANG = "en";
+let LANG = "ar";
 export const T = DATA.ar.ui, R = DATA.ar.relation;
 export const getLang = () => LANG;
 export const setLang = lang => { LANG = lang; };
