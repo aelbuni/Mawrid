@@ -14,7 +14,8 @@ export function initSearch() {
     const v = q.value.trim().toLowerCase();
     if (!v) { res.hidden = true; q.setAttribute("aria-expanded", "false"); return; }
     hits = Object.values(PEOPLE).filter(p =>
-      p.lat.toLowerCase().includes(v) || (p.ar || "").includes(q.value.trim()) ||
+      p.lat.toLowerCase().includes(v) ||
+      (p.ar || "").includes(q.value.trim()) || (p.shortAr || "").includes(q.value.trim()) ||
       (p.kunya || "").toLowerCase().includes(v) ||
       (p.laqab || []).some(l => l.toLowerCase().includes(v))).slice(0, 8);
     hi = -1;
