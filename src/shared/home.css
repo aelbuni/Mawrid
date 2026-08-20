@@ -8,3 +8,5 @@
 .tool-card:hover{transform:translateY(-3px)}
 .tool-card h2{font-size:19px;margin:0 0 8px}
 .tool-card p{font-size:14px;color:var(--muted);font-weight:600;line-height:1.5;margin:0}
+body[dir="rtl"]{font-family:"Baloo Bhaijaan 2","Nunito",system-ui,sans-serif}
+body[dir="rtl"] .tagline,body[dir="rtl"] .tool-card p{line-height:1.85}
