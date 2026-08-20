@@ -16,11 +16,11 @@
 
 ### لقطات الشاشة
 
-![شجرة الصحابة بالعربية](./screenshots/tree-ar.png)
-*شجرة الصحابة بالعربية — وهي العرض الافتراضي للتطبيق.*
+![شجرة الصحابة بالعربية وبطاقة أبي بكر الصديق مفتوحة](./screenshots/tree-ar.png)
+*العرض الافتراضي للتطبيق: البحث عن أبي بكر الصديق يُبرز نسبه في الشجرة ويفتح بطاقته — قصته، وقرابته، ومتى ورد أنه آمن، ومصادره.*
 
-![الشجرة نفسها بالإنجليزية](./screenshots/tree-en.png)
-*الشجرة نفسها بعد التحويل إلى الإنجليزية عبر مبدّل اللغة.*
+![العرض نفسه بالإنجليزية](./screenshots/tree-en.png)
+*العرض نفسه بعد التحويل إلى الإنجليزية عبر مبدّل اللغة، وقد انتقلت الشجرة والبطاقة إلى الاتجاه من اليسار إلى اليمين.*
 
 ### المزايا
 
@@ -129,11 +129,11 @@ The Companions is an interactive, sourced family tree and timeline of the Prophe
 
 ### Screenshots
 
-![The Companions tree in Arabic](./screenshots/tree-ar.png)
-*The Companions tree in Arabic — the app's default view.*
+![The tree in Arabic with Abu Bakr al-Siddiq's card open](./screenshots/tree-ar.png)
+*The app's default view: searching for Abu Bakr al-Siddiq highlights his lineage in the tree and opens his card — his story, his relatives, when he is recorded as having believed, and his sources.*
 
-![The same tree in English](./screenshots/tree-en.png)
-*The same tree after switching to English via the language toggle.*
+![The same view in English](./screenshots/tree-en.png)
+*The same view after switching to English via the language toggle; tree and card flip to left-to-right.*
 
 ### Features
 
